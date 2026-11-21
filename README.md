@@ -1,5 +1,14 @@
-
 # Concrete Strength: Statistical Analysis and Prediction
+
+## Project Overview
+
+This project investigates how concrete ingredients and curing age relate to compressive strength, builds machine-learning models to predict strength, and evaluates when those predictions are reliable.
+
+### Main Goals
+
+1. **Statistical Analysis:** Investigate which features are associated with higher or lower concrete strength.
+2. **Machine Learning:** Predict concrete strength using Linear Regression, Ridge Regression, and Random Forest.
+3. **Model Reliability:** Analyze errors and identify situations where predictions are less dependable.
 
 ## Dataset
 
@@ -49,17 +58,13 @@ The dataset was examined for missing values, duplicate records, invalid measurem
 
 ### Processed Dataset
 
-The prepared dataset is available at:
-
-`data/processed/concrete_clean.csv`
+The prepared dataset is available at `data/processed/concrete_clean.csv`.
 
 **Final shape:** 1,030 rows × 9 columns.
 
 ### Detailed Analysis
 
-The complete data quality investigation, Python code, and results are available in:
-
-[Task 02 — Data Quality Checking](notebooks/02_data_quality.ipynb)
+The complete data quality investigation, Python code, and results are available in [Task 02 — Data Quality Checking](notebooks/02_data_quality.ipynb).
 
 ## Exploratory Data Analysis (EDA)
 
@@ -96,18 +101,55 @@ The following visualizations were generated:
 4. Feature vs. Strength Scatter Plots
 5. Concrete Strength by Curing Age
 
-All generated figures are available in:
-
-[`reports/figures/`](reports/figures/)
+Generated figures are available in [`reports/figures/`](reports/figures/).
 
 ### Detailed Analysis
 
-The complete EDA, visualizations, Python code, and interpretations are available in:
+The complete EDA, visualizations, Python code, and interpretations are available in [Statistical Analysis Notebook](notebooks/03_statistical_analysis.ipynb).
 
-[Task 03 — Exploratory Data Analysis](notebooks/03_statistical_analysis.ipynb)
+## Correlation Analysis
+
+Pearson correlation analysis was used to quantify linear relationships between concrete ingredients, curing age, and compressive strength.
+
+### Analysis Performed
+
+- Calculated the Pearson correlation matrix and visualized it with a heatmap.
+- Ranked the eight input features by their correlations with strength.
+- Examined relationships between ingredient quantities.
+- Compared correlation results with and without 25 exact duplicate rows.
+
+### Key Findings
+
+| Feature | Pearson r with Strength |
+|---|---:|
+| Cement | +0.4978 |
+| Superplasticizer | +0.3661 |
+| Age | +0.3289 |
+| Blast Furnace Slag | +0.1348 |
+| Fly Ash | -0.1058 |
+| Coarse Aggregate | -0.1649 |
+| Fine Aggregate | -0.1672 |
+| Water | -0.2896 |
+
+- **Strongest positive correlation:** Cement (r = +0.4978).
+- **Strongest negative correlation:** Water (r = -0.2896).
+- **Weakest absolute correlation:** Fly Ash (r = -0.1058).
+- **Notable feature-to-feature relationship:** Water vs. Superplasticizer (r = -0.657).
+- **Duplicate sensitivity:** Removing 25 exact duplicates changed each correlation by less than approximately 0.032; the signs of all correlations stayed the same.
+
+*These are exploratory linear associations, not causal effects. The original dataset was preserved; exact duplicates must be handled carefully during predictive evaluation.*
+
+### Visualizations
+
+![Pearson Correlation Heatmap](reports/figures/correlation_heatmap.png)
+
+![Feature Correlations with Strength](reports/figures/strength_correlations.png)
+
+### Detailed Analysis
+
+Code, tables, plots, and interpretations are provided in [Statistical Analysis Notebook — Task 04](notebooks/03_statistical_analysis.ipynb).
 
 ### Next Step
 
-**Task #04 — Correlation Analysis**
+**Task #05 — Statistical Modelling & Interpretation** will investigate how ingredients and curing age relate to strength when modeled together.
 
-Pearson correlation coefficients will be calculated to quantify the direction and strength of linear relationships between concrete ingredients, curing age, and compressive strength.
