@@ -198,3 +198,48 @@ are available in the
 Task #06 — Statistical Findings & Conclusions.
 
 
+
+## Goal 01 — Statistical Analysis Conclusions
+
+Statistical analysis was conducted to investigate
+how concrete ingredients and curing age relate
+to compressive strength.
+
+### Main Findings
+
+- Cement showed the strongest positive Pearson
+  correlation with strength (r = +0.498).
+- Water showed the strongest negative Pearson
+  correlation with strength (r = -0.290).
+- Multiple regression identified six statistically
+  significant conditional associations.
+- The OLS model achieved R² = 0.6133 and
+  Adjusted R² = 0.6094 on training data.
+- Fly ash showed a negative simple correlation
+  but a positive multiple regression coefficient.
+- Multicollinearity and regression diagnostics
+  highlighted limitations of the linear model.
+
+### Conclusion
+
+Concrete strength is statistically associated
+with multiple ingredients and curing age.
+
+However, observed associations do not establish
+causal relationships.
+
+The results suggest that nonlinear modelling
+may be useful for improving prediction.
+
+### Detailed Statistical Analysis
+
+Complete analysis and conclusions are available in:
+
+[Statistical Analysis Notebook](notebooks/03_statistical_analysis.ipynb)
+
+### Next Goal
+
+**Goal 02 — Machine Learning Prediction**
+
+Build and compare Linear Regression,
+Ridge Regression, and Random Forest models.
