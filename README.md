@@ -153,3 +153,48 @@ Code, tables, plots, and interpretations are provided in [Statistical Analysis N
 
 **Task #05 — Statistical Modelling & Interpretation** will investigate how ingredients and curing age relate to strength when modeled together.
 
+
+
+## Statistical Modelling & Interpretation
+
+Multiple Linear Regression was performed using
+Ordinary Least Squares (OLS) to investigate how
+concrete ingredients and curing age are associated
+with compressive strength when considered together.
+
+### Analysis Performed
+
+- Multiple Linear Regression using Statsmodels
+- Regression coefficient interpretation
+- P-values and 95% confidence intervals
+- R-squared and Adjusted R-squared
+- Multicollinearity analysis using VIF
+- Residual diagnostics
+- Breusch-Pagan test
+
+### Key Findings
+
+- **R-squared:** 0.6133
+- **Adjusted R-squared:** 0.6094
+- **Main positive associations:** Cement (+0.1185), Blast Furnace Slag (+0.0986), Fly Ash (+0.0862), Superplasticizer (+0.2570), and Age (+0.1174).
+- **Main negative associations:** Water (-0.1688).
+- **Multicollinearity findings:** Cement had the highest VIF of 7.187, indicating potential multicollinearity that requires attention.
+- **Regression diagnostic findings:** Residual plots indicated heteroscedasticity. The Q-Q plot showed some deviations from normality at the tails. The Breusch-Pagan test confirmed evidence of heteroscedasticity (p-value approximately 0.0).
+
+### Regression Diagnostics
+
+![OLS Residuals vs Fitted](reports/figures/ols_residuals_vs_fitted.png)
+
+![OLS Q-Q Plot](reports/figures/ols_residuals_qqplot.png)
+
+### Detailed Analysis
+
+Full statistical results and interpretations
+are available in the
+[Statistical Analysis Notebook](notebooks/03_statistical_analysis.ipynb).
+
+### Next Step
+
+Task #06 — Statistical Findings & Conclusions.
+
+
